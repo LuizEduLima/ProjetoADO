@@ -7,3 +7,12 @@ C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Bus
 C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.csproj.CoreCompileInputs.cache
 C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.dll
 C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.pdb
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\bin\Debug\netcoreapp3.1\ADO.Business.deps.json
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\bin\Debug\netcoreapp3.1\ADO.Business.dll
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\bin\Debug\netcoreapp3.1\ADO.Business.pdb
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.AssemblyInfoInputs.cache
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.AssemblyInfo.cs
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.csproj.CoreCompileInputs.cache
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.dll
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.pdb

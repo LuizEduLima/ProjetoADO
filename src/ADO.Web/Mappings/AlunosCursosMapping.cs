@@ -12,7 +12,9 @@ namespace ADO.Web.Mappings
     {
         public void Configure(EntityTypeBuilder<AlunoCurso> builder)
         {
-            builder.HasKey(a => new {a.Aluno_id,a.Curso_Id });
+            builder.HasKey(ac=> new { ac.Aluno_id,ac.Curso_Id});
+            
+
         }
     }
 }

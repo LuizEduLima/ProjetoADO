@@ -19,13 +19,6 @@ namespace ADO.Business.Models
         [ScaffoldColumn(false)]
         public IEnumerable<Categoria> Categorias { get; set; }= new List<Categoria>();
     }
-
-    public class AlunoCurso
-    {
-        public int Aluno_id { get; set; }
-        public int Curso_Id { get; set; }
-
-    }
-   
+ 
 }
 

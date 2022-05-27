@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using ADO.Business.Models;
 
-namespace ADO.Web.Data
+using ADO.Business.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace ADO.Data.Data
 {
     public class ADOWebContext : DbContext
     {
@@ -18,8 +19,6 @@ namespace ADO.Web.Data
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<AlunoCurso> AlunosCursos { get; set; }
-
-
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

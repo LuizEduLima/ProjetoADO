@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ADO.Business.Models;
-using ADO.Web.Data;
+using ADO.Data.Data;
 using ADO.Business.Interfaces;
 
 namespace ADO.Web.Controllers
