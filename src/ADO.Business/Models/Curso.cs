@@ -13,6 +13,8 @@ namespace ADO.Business.Models
         public decimal Valor { get; set; }
         public bool Ativo { get; set; }
 
+        public int CategoriaId { get; set; }
+
         [NotMapped]
         [ScaffoldColumn(false)]
         public IEnumerable<Categoria> Categorias { get; set; }= new List<Categoria>();

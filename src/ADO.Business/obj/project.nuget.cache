@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EFgKj+TsS5qJrSDr+2oW/7XBMpirX/Dobtk4izTKMuEQJXoTB52RVLMjzEH8OB5AU74QNp7qx+l1O0cu45UsBw==",
+  "dgSpecHash": "JFF/8J9Wtk+0/ZLZ4uJl1Cs9RH/wh5DQ/gHXrWUTFW/s7vfe+O0T7WRa7jMAL61jWY7EX0TwRXqtWNXnC5TZ0g==",
   "success": true,
-  "projectFilePath": "C:\\projetos\\AppADO\\AppModeloADO\\src\\ADO.Business\\ADO.Business.csproj",
+  "projectFilePath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

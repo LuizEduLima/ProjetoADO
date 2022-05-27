@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projetos\\AppADO\\AppModeloADO\\src\\ADO.Business\\ADO.Business.csproj": {}
+    "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj": {}
   },
   "projects": {
-    "C:\\projetos\\AppADO\\AppModeloADO\\src\\ADO.Business\\ADO.Business.csproj": {
+    "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projetos\\AppADO\\AppModeloADO\\src\\ADO.Business\\ADO.Business.csproj",
+        "projectUniqueName": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj",
         "projectName": "ADO.Business",
-        "projectPath": "C:\\projetos\\AppADO\\AppModeloADO\\src\\ADO.Business\\ADO.Business.csproj",
+        "projectPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj",
         "packagesPath": "C:\\Users\\LEL\\.nuget\\packages\\",
-        "outputPath": "C:\\projetos\\AppADO\\AppModeloADO\\src\\ADO.Business\\obj\\",
+        "outputPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -57,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
