@@ -7,14 +7,11 @@ using System.Data.SqlClient;
 
 namespace ADO.Data.Repository
 {
-    public  class BaseADO : IDisposable
+    public abstract class BaseADO : IDisposable
     {
         private IConfiguration Configure { get; set; }
-        public SqlConnection Connection { get; }
-
-
-     
-        public BaseADO(IConfiguration configure)
+        public SqlConnection Connection { get; }     
+        protected BaseADO(IConfiguration configure)
         {
             Configure = configure;
             Connection = new SqlConnection(Configure.GetConnectionString("ADOdb"));

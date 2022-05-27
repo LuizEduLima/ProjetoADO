@@ -11,9 +11,9 @@ namespace ADO.Business.Interfaces
 
         Task<IEnumerable<T>> ObterTodos();
         Task<T> ObterPorId(int id);
-        Task<int> Adicionar(T entity);
+        Task<T> Adicionar(T entity);
         Task<T> Atualizar(T entity);
-        Task<int> Remover(int id);
+        Task Remover(int id);
 
 
     }
