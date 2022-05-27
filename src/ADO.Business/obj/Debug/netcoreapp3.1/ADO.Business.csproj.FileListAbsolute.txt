@@ -1,0 +1,9 @@
+C:\projetos\AppADO\AppModeloADO\src\ADO.Business\bin\Debug\netcoreapp3.1\ADO.Business.deps.json
+C:\projetos\AppADO\AppModeloADO\src\ADO.Business\bin\Debug\netcoreapp3.1\ADO.Business.dll
+C:\projetos\AppADO\AppModeloADO\src\ADO.Business\bin\Debug\netcoreapp3.1\ADO.Business.pdb
+C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.csprojAssemblyReference.cache
+C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.AssemblyInfoInputs.cache
+C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.AssemblyInfo.cs
+C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.csproj.CoreCompileInputs.cache
+C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.dll
+C:\projetos\AppADO\AppModeloADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.pdb

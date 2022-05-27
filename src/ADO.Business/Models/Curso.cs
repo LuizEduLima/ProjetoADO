@@ -1,0 +1,29 @@
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
+
+namespace ADO.Business.Models
+{
+    public class Curso : Entity
+    {
+        public Categoria Categoria { get; set; }
+        public string Descricao { get; set; }
+        public int TotalHoras { get; set; }
+        public decimal Valor { get; set; }
+        public bool Ativo { get; set; }
+
+        [NotMapped]
+        [ScaffoldColumn(false)]
+        public IEnumerable<Categoria> Categorias { get; set; }= new List<Categoria>();
+    }
+
+    public class AlunoCurso
+    {
+        public int Aluno_id { get; set; }
+        public int Curso_Id { get; set; }
+
+    }
+   
+}
+

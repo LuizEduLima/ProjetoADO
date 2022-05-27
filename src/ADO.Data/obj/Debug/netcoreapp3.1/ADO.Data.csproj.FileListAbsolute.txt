@@ -1,0 +1,12 @@
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\bin\Debug\netcoreapp3.1\ADO.Data.deps.json
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\bin\Debug\netcoreapp3.1\ADO.Data.dll
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\bin\Debug\netcoreapp3.1\ADO.Data.pdb
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\obj\Debug\netcoreapp3.1\ADO.Data.csprojAssemblyReference.cache
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\obj\Debug\netcoreapp3.1\ADO.Data.AssemblyInfoInputs.cache
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\obj\Debug\netcoreapp3.1\ADO.Data.AssemblyInfo.cs
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\obj\Debug\netcoreapp3.1\ADO.Data.csproj.CoreCompileInputs.cache
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\obj\Debug\netcoreapp3.1\ADO.Data.dll
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\obj\Debug\netcoreapp3.1\ADO.Data.pdb
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\bin\Debug\netcoreapp3.1\ADO.Business.dll
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\bin\Debug\netcoreapp3.1\ADO.Business.pdb
+C:\projetos\AppADO\AppModeloADO\src\ADO.Data\obj\Debug\netcoreapp3.1\ADO.Data.csproj.CopyComplete
