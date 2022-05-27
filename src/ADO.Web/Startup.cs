@@ -22,10 +22,13 @@ namespace ADO.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<BaseADO>();
+
+
+            services.AddScoped(typeof(BaseADO));
             services.AddScoped<IAlunoRepository, AlunoRepository>();
             services.AddScoped<ICursoRepository, CursoRepository>();
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+
             services.AddControllersWithViews();
 
             services.AddDbContext<ADOWebContext>(options =>

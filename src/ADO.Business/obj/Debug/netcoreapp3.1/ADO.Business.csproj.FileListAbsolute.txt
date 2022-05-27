@@ -16,3 +16,4 @@ C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.B
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.csproj.CoreCompileInputs.cache
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.dll
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.pdb
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.csproj.AssemblyReference.cache

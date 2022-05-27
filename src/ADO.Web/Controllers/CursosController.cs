@@ -53,7 +53,7 @@ namespace ADO.Web.Controllers
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var result = await _cursoRepository.Adicionar(curso);
-            if (result == 0)
+            if (result == null)
             {
                 AdicionarErroProcessamento("Erro ao adicionar Curso");
                 return CustomResponse();
@@ -117,13 +117,9 @@ namespace ADO.Web.Controllers
                 return CustomResponse();
             }
 
-            var result = await _cursoRepository.Remover(id);
+             await _cursoRepository.Remover(id);
 
-            if (result == 0)
-            {
-                AdicionarErroProcessamento("Error ao Excluir o curso!");
-                return CustomResponse();
-            }
+           
             return RedirectToAction(nameof(Index));
         }
 

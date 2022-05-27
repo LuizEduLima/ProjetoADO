@@ -19,6 +19,7 @@ namespace ADO.Web.Controllers
         {
             _alunoRepository = alunoRepository;
         }
+
         [HttpGet("")]
         [HttpGet("lista-alunos")]
         public async Task<ActionResult> Index()
@@ -39,10 +40,9 @@ namespace ADO.Web.Controllers
 
             }
             var result = await _alunoRepository.ObterPorId(id);
-            return CustomResponse(result);
+            return View(result);
                        
         }
-
     
         public ActionResult Create()
         {

@@ -1,5 +1,6 @@
 ﻿using ADO.Business.Interfaces;
 using ADO.Business.Models;
+using ADO.Data.Exceptions;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -26,14 +27,14 @@ namespace ADO.Data.Repository
         }
         public async Task<Aluno> ObterPorId(int id)
         {
-            string query = $"SEÇECT * FROM alunos WHERE id = @id";
+            string query = $"SELECT * FROM alunos as a WHERE a.id = {@id}";
             var Result = new Aluno { Id = id };
             try
             {
                 using (var conn = Connection)
                 {
                  /* await conn.ExecuteAsync(sql: query, param: new { id })*/;
-                  Result= await conn.QueryFirstAsync<Aluno>(query, id);
+                    return await conn.QueryFirstAsync<Aluno>(query, id);
                 }
 
             }
@@ -61,19 +62,41 @@ namespace ADO.Data.Repository
                 throw;
             }
         }
-
-        public Task<Aluno> Atualizar(Aluno entity)
+        public async Task<Aluno> Atualizar(Aluno aluno)
         {
-            throw new NotImplementedException();
-        }
-
-       
-
-       
-
-        public Task Remover(int id)
+            string query = "UPDATE alunos SET nome= @nome, descricao=@descricao, " +
+               "CPF=@CPF, cidade= @cidade, estado= @estado " +
+               $"WHERE id ={@aluno.Id}";
+            try
+            {
+                using (var conn = Connection)
+                {
+                    return await conn.ExecuteScalarAsync<Aluno>(query, aluno);
+                 
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }    
+        public async Task Remover(int id)
         {
-            throw new NotImplementedException();
+            string query = $"DELETE FROM alunos WHERE id = {@id}";
+
+            try
+            {
+                using (var conn = Connection)
+                {
+                    await conn.ExecuteAsync(sql: query, param: new { id });
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new DomainException("Ops! Não foi possível excluir esse registro porque" +
+                    " ele está associdado a outras tabelas.");
+            }
         }
     }
 }

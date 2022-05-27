@@ -343,3 +343,6 @@ C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\ADO.Web.Ra
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\ADO.Web.Views.pdb
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\ADO.Web.csproj.CopyComplete
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\ADO.Web.genruntimeconfig.cache
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categoria\Details.cshtml.g.cs
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categoria\Delete.cshtml.g.cs
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categoria\Edit.cshtml.g.cs
