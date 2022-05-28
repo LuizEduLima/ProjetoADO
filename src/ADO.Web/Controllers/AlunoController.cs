@@ -17,7 +17,8 @@ namespace ADO.Web.Controllers
         private readonly IAlunoRepository _alunoRepository;
         private readonly AlunoService _alunoService;
         public AlunoController(IAlunoRepository alunoRepository,
-              INotificador notificador, AlunoService alunoService) : base(notificador)
+                               INotificador notificador,
+                               AlunoService alunoService) : base(notificador)
         {
             _alunoRepository = alunoRepository;
             _alunoService = alunoService;
@@ -28,8 +29,6 @@ namespace ADO.Web.Controllers
         public async Task<ActionResult> Index()
         {
             var result = await _alunoRepository.ObterTodos();
-
-
             return View(result);
         }
 
@@ -40,7 +39,6 @@ namespace ADO.Web.Controllers
             {
                 AdicionarErroNotificacao("O Registro não foi informado!");
                 return BadRequest();
-
             }
             var result = await _alunoRepository.ObterPorId(id);
             return View(result);
@@ -56,11 +54,10 @@ namespace ADO.Web.Controllers
         public async Task<ActionResult> Create(Aluno aluno)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-           
+
             await _alunoService.Adicionar(aluno);
 
             if (!OperacaoValida()) return View(aluno);
-           
 
             return RedirectToAction(nameof(Index));
         }
@@ -68,8 +65,6 @@ namespace ADO.Web.Controllers
         [HttpGet("editar-aluno/{id:int}")]
         public async Task<ActionResult> Edit(int id)
         {
-
-
             var result = await _alunoRepository.ObterPorId(id);
 
             if (result == null) return NotFound();
@@ -81,15 +76,15 @@ namespace ADO.Web.Controllers
         public async Task<ActionResult> Edit(int id, Aluno aluno)
         {
 
-
-            if (id <= 0) return BadRequest();
             if (id != aluno.Id) return BadRequest();
 
-            var result = await _alunoRepository.Atualizar(aluno);
+            if (!ModelState.IsValid) return BadRequest();
+
+
+            var result = await _alunoService.Atualizar(aluno);
 
             return RedirectToAction("Details", new { result.Id });
         }
-
 
         public async Task<ActionResult> Delete(int id)
         {
@@ -100,25 +95,14 @@ namespace ADO.Web.Controllers
             return View(result);
         }
 
-
         [HttpPost, ActionName("Delete")]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             if (id <= 0) return BadRequest();
+            await _alunoService.Excluir(id);
 
-            // var result = await _alunoRepository.ObterPorId(id);
+            return RedirectToAction(nameof(Index));
 
-            try
-            {
-                await _alunoRepository.Remover(id);
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch (DomainException)
-            {
-
-                throw new DomainException("");
-            }
 
         }
 

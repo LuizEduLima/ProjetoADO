@@ -14,11 +14,16 @@ namespace ADO.Web.Controllers
     public class CursosController : MainController
     {
         private readonly ICursoRepository _cursoRepository;
+        private readonly ICursoService _cursoService;
 
-        public CursosController(ICursoRepository cursoRepository, INotificador notificacao) 
+
+        public CursosController(ICursoRepository cursoRepository, 
+                                INotificador notificacao, 
+                                ICursoService cursoService)
             : base(notificacao)
         {
             _cursoRepository = cursoRepository;
+            _cursoService = cursoService;
         }
 
 
@@ -30,10 +35,7 @@ namespace ADO.Web.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-
-            var curso = await _cursoRepository.ObterPorId(id);
-
-           
+            var curso = await _cursoRepository.ObterPorId(id);          
 
             return View(curso);
         }
@@ -50,7 +52,7 @@ namespace ADO.Web.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _cursoRepository.Adicionar(curso);
+            var result = await _cursoService.Adicionar(curso);
             if (result == null)
             {
                 AdicionarErroNotificacao("Erro ao adicionar Curso");
@@ -64,7 +66,6 @@ namespace ADO.Web.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-
             var curso = await _cursoRepository.ObterPorId(id);
             if (curso == null)
             {
@@ -85,7 +86,7 @@ namespace ADO.Web.Controllers
 
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _cursoRepository.Atualizar(curso);
+            var result = await _cursoService.Atualizar(curso);
 
             return RedirectToAction(nameof(Index));
 
@@ -115,7 +116,7 @@ namespace ADO.Web.Controllers
                 return BadRequest();
             }
 
-            await _cursoRepository.Remover(id);
+            await _cursoService.Excluir(id);
 
 
             return RedirectToAction(nameof(Index));

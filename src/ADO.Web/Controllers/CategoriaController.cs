@@ -13,10 +13,13 @@ namespace ADO.Web.Controllers
     {
 
         public readonly ICategoriaRepository _categoriaRepository;
+        public readonly ICategoriaService _categoriaService;
 
-        public CategoriaController(ICategoriaRepository categoriaRepository)
+        public CategoriaController(ICategoriaRepository categoriaRepository,
+            ICategoriaService categoriaService)
         {
             _categoriaRepository = categoriaRepository;
+            _categoriaService = categoriaService;
         }
 
         public async Task<ActionResult> Index()
@@ -46,15 +49,9 @@ namespace ADO.Web.Controllers
         public async Task<ActionResult> Create(Categoria categoria)
         {
             if (!ModelState.IsValid) return View(categoria);
-            try
-            {
-                await _categoriaRepository.Adicionar(categoria);
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+
+            await _categoriaService.Adicionar(categoria);
+            return RedirectToAction(nameof(Index));            
         }
 
         public async Task<ActionResult> Edit(int id)
@@ -70,7 +67,7 @@ namespace ADO.Web.Controllers
         {
             if (id != categoria.Id) return View();
 
-            await _categoriaRepository.Atualizar(categoria);
+            await _categoriaService.Atualizar(categoria);
 
             return RedirectToAction("Index");
         }
@@ -81,15 +78,15 @@ namespace ADO.Web.Controllers
             if (result == null) return NotFound();
             return View(result);
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(Categoria categoria)
         {
-            
-                await _categoriaRepository.Remover(categoria.Id);
-                return RedirectToAction(nameof(Index));
-            
+
+            await _categoriaService.Excluir(categoria.Id);
+            return RedirectToAction(nameof(Index));
+
         }
     }
 }

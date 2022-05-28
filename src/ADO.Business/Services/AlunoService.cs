@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 using Dapper;
 namespace ADO.Business.Services
 {
-    public class AlunoService :BaseService, IAlunoService
+    public class AlunoService : BaseService, IAlunoService
     {
-        private readonly IAlunoRepository _alunoRepository;  
+        private readonly IAlunoRepository _alunoRepository;
 
         public AlunoService(IAlunoRepository alunoRepository,
-                            IConfiguration configure, 
-                            INotificador notificador) 
+                            IConfiguration configure,
+                            INotificador notificador)
                             : base(configure, notificador)
         {
             _alunoRepository = alunoRepository;
@@ -23,12 +23,12 @@ namespace ADO.Business.Services
 
         public async Task<Aluno> Adicionar(Aluno aluno)
         {
-            using(var conn = Connection)
-            {          
+            using (var conn = Connection)
+            {
 
                 var query = $"SELECT * FROM alunos AS A WHERE A.CPF={@aluno.CPF}";
-                var result = await conn.QueryFirstAsync<Aluno>(query, aluno);
-                if (result != null)
+                var result = await conn.ExecuteAsync(query, aluno);
+                if (result > 0)
                 {
                     AdicionarNotificacoes("Já existe um Aluno com esse Documento ");
                     return aluno;
@@ -36,17 +36,19 @@ namespace ADO.Business.Services
                 await _alunoRepository.Adicionar(aluno);
                 return aluno;
             }
+
+        }
+
+        public async Task<Aluno> Atualizar(Aluno aluno)
+        {
+           return await _alunoRepository.Atualizar(aluno);
             
+
         }
 
-        public Task<Aluno> Atualizar(Aluno entity)
+        public async Task Excluir(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task Excluir(int id)
-        {
-            throw new NotImplementedException();
+           await _alunoRepository.Remover(id);
         }
     }
 }
