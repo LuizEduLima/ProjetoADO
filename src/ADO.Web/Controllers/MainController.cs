@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ADO.Business.Interfaces;
+using ADO.Business.Notificacoes;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
@@ -9,45 +11,25 @@ namespace ADO.Web.Controllers
 {
     public abstract class MainController : Controller
     {
-        private ICollection<string> Erros = new List<string>();
 
-        protected ActionResult CustomResponse(object Result = null)
+        private readonly INotificador _notificacao;
+
+        protected MainController(INotificador notificacao)
         {
-            if (OperacaoValida())
-            {
-                return Ok(Result);
-            }
-            return BadRequest(new ValidationProblemDetails(new Dictionary<string, string[]>
-            { 
-            {"Mensagens",Erros.ToArray()}
-            }));
-            
+            _notificacao = notificacao;
         }
-
-        protected ActionResult CustomResponse(ModelStateDictionary modelState)
-        {
-            var erros = modelState.Values.SelectMany(e => e.Errors);
-            foreach (var erro in erros)
-            {
-                AdicionarErroProcessamento(erro.ErrorMessage);
-            }
-
-            return CustomResponse();
-        }
-
+        
 
         protected bool OperacaoValida()
         {
-            return !Erros.Any();
+            return !_notificacao.TemNotificacao();
         }
-        protected void AdicionarErroProcessamento( string erro)
+        protected void AdicionarErroNotificacao(string mensagem)
         {
-            Erros.Add(erro);
+            _notificacao.Handle(new Notificacao(mensagem));
         }
-        protected void LimparErrosProcessamentos()
-        {
-            Erros.Clear();
-        }
+      
+
 
     }
 }

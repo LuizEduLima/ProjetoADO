@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace ADO.Data.Repository
 {
-    public class CursoRepository : BaseADO,ICursoRepository
+    public class CursoRepository : BaseADO, ICursoRepository
     {
-        public CursoRepository(IConfiguration configure) : base(configure) { }
+        public CursoRepository(IConfiguration configure,
+                                INotificador notificador) :
+            base(configure, notificador){ }
 
         public Task<Curso> Adicionar(Curso entity)
         {

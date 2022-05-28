@@ -12,10 +12,12 @@ namespace ADO.Data.Repository
 {
     public class CategoriaRepository : BaseADO, ICategoriaRepository
     {
-        public CategoriaRepository(IConfiguration configure) : base(configure) { }
+        public CategoriaRepository(IConfiguration configuration,
+            INotificador notificador):base(configuration, notificador) { }
+     
 
 
-        public async Task<Categoria> Adicionar(Categoria categoria)
+    public async Task<Categoria> Adicionar(Categoria categoria)
         {
             string query = $"INSERT INTO categorias (descricao, cadastrado_em)" +
                 " VALUES ( @descricao, @cadastrado_em)";

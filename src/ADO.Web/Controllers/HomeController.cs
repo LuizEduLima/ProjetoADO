@@ -16,10 +16,7 @@ namespace ADO.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController()
-        {
-                
-        }
+       
 
         public IActionResult Index()
         {
@@ -32,10 +29,39 @@ namespace ADO.Web.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        
+        [Route("erro/{id:int}")]
+        public IActionResult Error(int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var erroViewModel = new ErrorViewModel();
+
+            switch (id)
+            {
+
+                case 500:
+                    erroViewModel.Mensagem = "Ocorreu um Erro :( ! Tente novamente mais tarde!!!";
+                    erroViewModel.Titulo = "Ocorreu um erro!";
+                    erroViewModel.ErroCode = id;
+                    break;
+
+                case 404:
+                    erroViewModel.Mensagem = "A página que está procurando não existe! <br/>Em caso de dúvidas entre em contato com o nosso suporte!";
+                    erroViewModel.Titulo = "Ops! Página não encontrada";
+                    erroViewModel.ErroCode = id;
+                    break;
+
+                case 403:
+                    erroViewModel.Mensagem = "Você não tem permissão para fazer isto.";
+                    erroViewModel.Titulo = "Acesso Negado!";
+                    erroViewModel.ErroCode = id;
+                    break;
+
+                default:
+                    return StatusCode(500);
+            }
+
+            return View("Error", erroViewModel);
+
         }
 
 

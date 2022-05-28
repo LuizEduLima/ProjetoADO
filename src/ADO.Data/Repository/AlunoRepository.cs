@@ -1,5 +1,6 @@
 ﻿using ADO.Business.Interfaces;
 using ADO.Business.Models;
+using ADO.Business.Notificacoes;
 using ADO.Data.Exceptions;
 using Dapper;
 using Microsoft.Extensions.Configuration;
@@ -10,17 +11,21 @@ using System.Threading.Tasks;
 
 namespace ADO.Data.Repository
 {
-    public class AlunoRepository :BaseADO, IAlunoRepository
+    public class AlunoRepository : BaseADO, IAlunoRepository
     {
 
-        public AlunoRepository(IConfiguration configure) : base(configure) { }
+
+        public AlunoRepository(IConfiguration configure,
+                                INotificador notificador) :
+            base(configure, notificador)
+        { }
 
         public async Task<IEnumerable<Aluno>> ObterTodos()
         {
             using (var conn = Connection)
             {
                 //pega o nome da classe Repository e fica só com o nome sem o REPOSITORY
-                
+
                 string query = $"SELECT * FROM alunos";
                 return await conn.QueryAsync<Aluno>(query);
             }
@@ -33,34 +38,36 @@ namespace ADO.Data.Repository
             {
                 using (var conn = Connection)
                 {
-                 /* await conn.ExecuteAsync(sql: query, param: new { id })*/;
+
                     return await conn.QueryFirstAsync<Aluno>(query, id);
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                
+
             }
             return Result;
         }
         public async Task<Aluno> Adicionar(Aluno aluno)
         {
-           
+
             string query = $"INSERT INTO alunos (nome,cpf,cidade,estado,nascimento,cadastrado_em)" +
                 " VALUES ( @nome, @CPF, @cidade, @estado,@nascimento,@cadastrado_em)";
 
             try
             {
-                using (var conn =Connection)
+                using (var conn = Connection)
                 {
                     return await conn.ExecuteScalarAsync<Aluno>(query, aluno);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                throw new Exception(e.Message);
             }
+
+
         }
         public async Task<Aluno> Atualizar(Aluno aluno)
         {
@@ -72,14 +79,14 @@ namespace ADO.Data.Repository
                 using (var conn = Connection)
                 {
                     return await conn.ExecuteScalarAsync<Aluno>(query, aluno);
-                 
+
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
-        }    
+        }
         public async Task Remover(int id)
         {
             string query = $"DELETE FROM alunos WHERE id = {@id}";

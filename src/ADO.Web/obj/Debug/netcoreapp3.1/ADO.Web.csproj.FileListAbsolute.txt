@@ -346,3 +346,11 @@ C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\ADO.Web.ge
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categoria\Details.cshtml.g.cs
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categoria\Delete.cshtml.g.cs
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categoria\Edit.cshtml.g.cs
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Summary\Default.cshtml.g.cs
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll

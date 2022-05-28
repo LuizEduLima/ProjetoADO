@@ -1898,6 +1898,11 @@
       "ADO.Business/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "System.Data.SqlClient": "4.8.3"
+        },
         "compile": {
           "bin/placeholder/ADO.Business.dll": {}
         },

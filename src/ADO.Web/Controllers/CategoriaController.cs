@@ -75,14 +75,12 @@ namespace ADO.Web.Controllers
             return RedirectToAction("Index");
         }
 
-
         public async Task<ActionResult> Delete(int id)
         {
             var result = await _categoriaRepository.ObterPorId(id);
             if (result == null) return NotFound();
             return View(result);
         }
-
         
         [HttpPost]
         [ValidateAntiForgeryToken]

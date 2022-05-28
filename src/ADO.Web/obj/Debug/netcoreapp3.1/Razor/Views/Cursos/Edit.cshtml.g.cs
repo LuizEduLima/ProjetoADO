@@ -27,7 +27,7 @@ using ADO.Web.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7abae38bca00c7a6aea75ed45ae74a63e2237a16", @"/Views/Cursos/Edit.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a4f8a60720846acd256f1c688f7594dafbbe33b8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0b5c250b8df0d925acda0ea9a834c4322947eaf8", @"/Views/_ViewImports.cshtml")]
     public class Views_Cursos_Edit : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ADO.Business.Models.Curso>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

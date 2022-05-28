@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using ADO.Data.Data;
+using ADO.Business.Notificacoes;
+using ADO.Business.Services;
 
 namespace ADO.Web
 {
@@ -23,11 +25,14 @@ namespace ADO.Web
         public void ConfigureServices(IServiceCollection services)
         {
 
-
-            services.AddScoped(typeof(BaseADO));
+            services.AddScoped<INotificador, Notificador>();
+            services.AddScoped(typeof(AlunoService));
+            services.AddScoped<IAlunoService, AlunoService>();
+            
             services.AddScoped<IAlunoRepository, AlunoRepository>();
             services.AddScoped<ICursoRepository, CursoRepository>();
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+
 
             services.AddControllersWithViews();
 
@@ -39,16 +44,21 @@ namespace ADO.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/erro/500");
+            //    app.UseStatusCodePagesWithRedirects("/erro/{0}");
+
+            //}
+            app.UseExceptionHandler("/erro/500");
+            app.UseStatusCodePagesWithRedirects("/erro/{0}");
+
+
+            app.UseHsts();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

@@ -1,6 +1,7 @@
 ﻿
 using ADO.Business.Interfaces;
 using ADO.Business.Models;
+using ADO.Business.Services;
 using ADO.Data.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,13 +12,15 @@ using System.Threading.Tasks;
 
 namespace ADO.Web.Controllers
 {
-    public class AlunoController :MainController
+    public class AlunoController : MainController
     {
         private readonly IAlunoRepository _alunoRepository;
-
-        public AlunoController(IAlunoRepository alunoRepository)
+        private readonly AlunoService _alunoService;
+        public AlunoController(IAlunoRepository alunoRepository,
+              INotificador notificador, AlunoService alunoService) : base(notificador)
         {
             _alunoRepository = alunoRepository;
+            _alunoService = alunoService;
         }
 
         [HttpGet("")]
@@ -35,15 +38,15 @@ namespace ADO.Web.Controllers
         {
             if (id <= 0)
             {
-                AdicionarErroProcessamento("Ops! Erro não identificado");
-                return CustomResponse(id);
+                AdicionarErroNotificacao("O Registro não foi informado!");
+                return BadRequest();
 
             }
             var result = await _alunoRepository.ObterPorId(id);
             return View(result);
-                       
+
         }
-    
+
         public ActionResult Create()
         {
             return View();
@@ -52,16 +55,21 @@ namespace ADO.Web.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(Aluno aluno)
         {
-            if (!ModelState.IsValid) return CustomResponse(ModelState);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+           
+            await _alunoService.Adicionar(aluno);
 
-            await _alunoRepository.Adicionar(aluno);
+            if (!OperacaoValida()) return View(aluno);
+           
 
             return RedirectToAction(nameof(Index));
         }
 
         [HttpGet("editar-aluno/{id:int}")]
-        public async Task<ActionResult> Edit(int id) 
+        public async Task<ActionResult> Edit(int id)
         {
+
+
             var result = await _alunoRepository.ObterPorId(id);
 
             if (result == null) return NotFound();
@@ -70,8 +78,10 @@ namespace ADO.Web.Controllers
         }
 
         [HttpPost("editar-aluno/{id:int}")]
-        public async Task<ActionResult> Edit(int id,Aluno aluno)
+        public async Task<ActionResult> Edit(int id, Aluno aluno)
         {
+
+
             if (id <= 0) return BadRequest();
             if (id != aluno.Id) return BadRequest();
 
@@ -80,7 +90,7 @@ namespace ADO.Web.Controllers
             return RedirectToAction("Details", new { result.Id });
         }
 
-               
+
         public async Task<ActionResult> Delete(int id)
         {
             if (id <= 0) return BadRequest();
@@ -90,7 +100,7 @@ namespace ADO.Web.Controllers
             return View(result);
         }
 
-       
+
         [HttpPost, ActionName("Delete")]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
@@ -109,7 +119,7 @@ namespace ADO.Web.Controllers
 
                 throw new DomainException("");
             }
-        
+
         }
 
 

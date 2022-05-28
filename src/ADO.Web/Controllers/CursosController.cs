@@ -15,7 +15,8 @@ namespace ADO.Web.Controllers
     {
         private readonly ICursoRepository _cursoRepository;
 
-        public CursosController(ICursoRepository cursoRepository)
+        public CursosController(ICursoRepository cursoRepository, INotificador notificacao) 
+            : base(notificacao)
         {
             _cursoRepository = cursoRepository;
         }
@@ -32,10 +33,7 @@ namespace ADO.Web.Controllers
 
             var curso = await _cursoRepository.ObterPorId(id);
 
-            if (curso == null)
-            {
-                return CustomResponse(curso);
-            }
+           
 
             return View(curso);
         }
@@ -50,13 +48,13 @@ namespace ADO.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Curso curso)
         {
-            if (!ModelState.IsValid) return CustomResponse(ModelState);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
 
             var result = await _cursoRepository.Adicionar(curso);
             if (result == null)
             {
-                AdicionarErroProcessamento("Erro ao adicionar Curso");
-                return CustomResponse();
+                AdicionarErroNotificacao("Erro ao adicionar Curso");
+                return View(curso);
             }
 
             return RedirectToAction(nameof(Index));
@@ -70,7 +68,7 @@ namespace ADO.Web.Controllers
             var curso = await _cursoRepository.ObterPorId(id);
             if (curso == null)
             {
-                return CustomResponse(curso);
+                return BadRequest();
             }
             return View(curso);
         }
@@ -81,11 +79,11 @@ namespace ADO.Web.Controllers
         {
             if (id != curso.Id)
             {
-                AdicionarErroProcessamento("Os Ids não conferem!");
-                return CustomResponse();
+                AdicionarErroNotificacao("Os Ids não conferem!");
+                return View(curso);
             }
 
-            if (!ModelState.IsValid) return CustomResponse(ModelState);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
 
             var result = await _cursoRepository.Atualizar(curso);
 
@@ -99,7 +97,7 @@ namespace ADO.Web.Controllers
             var curso = await _cursoRepository.ObterPorId(id);
             if (curso == null)
             {
-                return CustomResponse(curso);
+                return BadRequest(curso);
             }
 
             return View(curso);
@@ -113,16 +111,16 @@ namespace ADO.Web.Controllers
             var curso = await _cursoRepository.ObterPorId(id);
             if (curso == null)
             {
-                AdicionarErroProcessamento($"O Curso com o Registro: {id} não foi encontrado");
-                return CustomResponse();
+                AdicionarErroNotificacao($"O Curso com o Registro: {id} não foi encontrado");
+                return BadRequest();
             }
 
-             await _cursoRepository.Remover(id);
+            await _cursoRepository.Remover(id);
 
-           
+
             return RedirectToAction(nameof(Index));
         }
 
-      
+
     }
 }
