@@ -16,3 +16,13 @@ C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.B
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.csproj.CoreCompileInputs.cache
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.dll
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.pdb
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\bin\Debug\netcoreapp3.1\ADO.Business.deps.json
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\bin\Debug\netcoreapp3.1\ADO.Business.dll
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\bin\Debug\netcoreapp3.1\ADO.Business.pdb
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.csproj.AssemblyReference.cache
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.AssemblyInfoInputs.cache
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.AssemblyInfo.cs
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.csproj.CoreCompileInputs.cache
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.dll
+C:\Users\LEL\Contacts\Desktop\ProjetoAtual\ProjetoADO\src\ADO.Business\obj\Debug\netcoreapp3.1\ADO.Business.pdb

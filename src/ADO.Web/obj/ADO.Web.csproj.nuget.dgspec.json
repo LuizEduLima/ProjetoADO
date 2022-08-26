@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Web\\ADO.Web.csproj": {}
+    "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Web\\ADO.Web.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj": {
+    "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj",
+        "projectUniqueName": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj",
         "projectName": "ADO.Business",
-        "projectPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj",
+        "projectPath": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj",
         "packagesPath": "C:\\Users\\LEL\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\obj\\",
+        "outputPath": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -75,18 +75,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj": {
+    "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj",
+        "projectUniqueName": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj",
         "projectName": "ADO.Data",
-        "projectPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj",
+        "projectPath": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj",
         "packagesPath": "C:\\Users\\LEL\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Data\\obj\\",
+        "outputPath": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -106,8 +106,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj": {
-                "projectPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj"
+              "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj": {
+                "projectPath": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Business\\ADO.Business.csproj"
               }
             }
           }
@@ -162,18 +162,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Web\\ADO.Web.csproj": {
+    "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Web\\ADO.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Web\\ADO.Web.csproj",
+        "projectUniqueName": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Web\\ADO.Web.csproj",
         "projectName": "ADO.Web",
-        "projectPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Web\\ADO.Web.csproj",
+        "projectPath": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Web\\ADO.Web.csproj",
         "packagesPath": "C:\\Users\\LEL\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Web\\obj\\",
+        "outputPath": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -193,8 +193,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj": {
-                "projectPath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj"
+              "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj": {
+                "projectPath": "C:\\Users\\LEL\\Contacts\\Desktop\\ProjetoAtual\\ProjetoADO\\src\\ADO.Data\\ADO.Data.csproj"
               }
             }
           }
@@ -250,7 +250,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
