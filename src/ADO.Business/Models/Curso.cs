@@ -18,6 +18,12 @@ namespace ADO.Business.Models
         [NotMapped]
         [ScaffoldColumn(false)]
         public IEnumerable<Categoria> Categorias { get; set; }= new List<Categoria>();
+        public List<Aluno> Alunos { get; set; } 
+
+        public Curso()
+        {
+
+        }
     }
  
 }

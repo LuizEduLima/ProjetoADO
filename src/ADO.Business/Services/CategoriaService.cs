@@ -26,7 +26,7 @@ namespace ADO.Business.Services
             using (var conn = Connection)
             {
 
-                var query = $"SELECT * FROM categorias AS C WHERE C.descricao ={categoria.Descricao}";
+                var query = $"SELECT * FROM categorias AS C WHERE C.descricao ='{@categoria.Descricao}'";
                 var result = await conn.ExecuteAsync(query, categoria);
                 if (result > 0)
                 {
@@ -46,6 +46,7 @@ namespace ADO.Business.Services
 
         public async Task Excluir(int id)
         {
+            
            await _categoriaRepository.Remover(id);
         }
     }

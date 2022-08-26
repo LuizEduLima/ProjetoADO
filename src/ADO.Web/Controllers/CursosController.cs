@@ -1,13 +1,9 @@
-﻿using System;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using ADO.Business.Models;
+using ADO.Business.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ADO.Business.Models;
-using ADO.Data.Data;
-using ADO.Business.Interfaces;
 
 namespace ADO.Web.Controllers
 {
@@ -15,15 +11,20 @@ namespace ADO.Web.Controllers
     {
         private readonly ICursoRepository _cursoRepository;
         private readonly ICursoService _cursoService;
+        private readonly ICategoriaRepository _CategoriaRepository;
+        private readonly IAlunoRepository _alunoRepository;
 
-
-        public CursosController(ICursoRepository cursoRepository, 
-                                INotificador notificacao, 
-                                ICursoService cursoService)
+        public CursosController(ICursoRepository cursoRepository,
+                                INotificador notificacao,
+                                ICursoService cursoService,
+                                ICategoriaRepository categoriaRepository,
+                                IAlunoRepository alunoRepository)
             : base(notificacao)
         {
             _cursoRepository = cursoRepository;
             _cursoService = cursoService;
+            _CategoriaRepository = categoriaRepository;
+            _alunoRepository = alunoRepository;
         }
 
 
@@ -32,18 +33,28 @@ namespace ADO.Web.Controllers
             var result = await _cursoRepository.ObterTodos();
             return View(result);
         }
+        public async Task<IActionResult> ObterAlunosPorCursos()
+        {
+            var result = await _cursoRepository.ObterAlunosPorCursos();
+            return View(result);
+        }
 
         public async Task<IActionResult> Details(int id)
         {
-            var curso = await _cursoRepository.ObterPorId(id);          
+            var curso = await _cursoRepository.ObterPorId(id);
 
             return View(curso);
         }
 
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();
+            var curso = new Curso
+            {
+                Categorias = await ObterCategorias()
+            };
+
+            return View(curso);
         }
 
         [HttpPost]
@@ -52,12 +63,8 @@ namespace ADO.Web.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _cursoService.Adicionar(curso);
-            if (result == null)
-            {
-                AdicionarErroNotificacao("Erro ao adicionar Curso");
-                return View(curso);
-            }
+            await _cursoService.Adicionar(curso);
+            if (!OperacaoValida()) return View(curso);
 
             return RedirectToAction(nameof(Index));
 
@@ -71,6 +78,7 @@ namespace ADO.Web.Controllers
             {
                 return BadRequest();
             }
+            curso.Categorias = await ObterCategorias();
             return View(curso);
         }
 
@@ -87,6 +95,8 @@ namespace ADO.Web.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             var result = await _cursoService.Atualizar(curso);
+
+            if (!OperacaoValida()) return View(curso);
 
             return RedirectToAction(nameof(Index));
 
@@ -118,10 +128,49 @@ namespace ADO.Web.Controllers
 
             await _cursoService.Excluir(id);
 
+            if (!OperacaoValida()) return View(curso);
 
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> MatricularAlunoCurso()
+        {
+
+            var alunocurso = await CarregarAlunosECursos();
 
 
+            return View(alunocurso);
+        }
+
+        [HttpPost()]
+        public async Task<IActionResult> MatricularAlunoCurso(AlunoCurso alunoCurso)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            await _cursoRepository.MatricularAlunoCurso(alunoCurso.Aluno_id, alunoCurso.Curso_Id);
+
+            if (!OperacaoValida())
+            {
+                alunoCurso = await CarregarAlunosECursos();
+                return View(alunoCurso);
+            }
+
+            return RedirectToAction("ObterAlunosPorCursos");
+        }
+        private async Task<IEnumerable<Categoria>> ObterCategorias()
+        {
+            return await _CategoriaRepository.ObterTodos();
+        }
+
+        private async Task<AlunoCurso> CarregarAlunosECursos()
+        {
+            var Alunos = await _alunoRepository.ObterTodos();
+            var Cursos = await _cursoRepository.ObterTodos();
+            var alunocurso = new AlunoCurso
+            {
+                alunos = Alunos.ToList(),
+                cursos = Cursos.ToList()
+            };
+            return alunocurso;
+        }
     }
 }

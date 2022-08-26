@@ -354,3 +354,6 @@ C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\System.Web
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
 C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\Razor\Views\Cursos\ObterAlunosPorCursos.cshtml.g.cs
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\obj\Debug\netcoreapp3.1\Razor\Views\Cursos\MatricularAlunoCurso.cshtml.g.cs
+C:\Projetos\ProjetoADO\ProjetoADO\src\ADO.Web\bin\Debug\netcoreapp3.1\Dapper.Contrib.dll

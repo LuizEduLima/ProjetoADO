@@ -25,7 +25,7 @@ namespace ADO.Business.Services
         {
             using (var conn = Connection)
             {
-                var query = $"SELECT * FROM cursos AS C WHERE A.descricao={@curso.Descricao}";
+                var query = $"select * from cursos where Descricao = '{@curso.Descricao}'";
                 var result = await conn.ExecuteAsync(query, curso);
                 if (result > 0)
                 {

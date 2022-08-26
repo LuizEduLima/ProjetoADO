@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ADO.Business.Models.Curso>
+@using ADO.Business.Models
+@{
+    ViewData["Title"] = "Nossas Turmas";
+    var alunos = new List<Aluno>();
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="MatricularAlunoCurso">Cadastrar novo Aluno</a>
+</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+            <div id="accordion">
+
+                @{
+                    foreach (var item in Model)
+                    {
+                        <div class="card">
+
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        @item.Descricao
+
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    @foreach (var aluno in item.Alunos)
+                                    {
+                                        <p>@aluno.Nome</p>
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }
+                }
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+
+        $('#collapseTwo').collapse({
+            toggle: false
+        })
+       
+    </script>
+}

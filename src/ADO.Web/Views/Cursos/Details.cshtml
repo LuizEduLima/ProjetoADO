@@ -1,5 +1,5 @@
 ﻿@model ADO.Business.Models.Curso
-
+@using System.Globalization
 @{
     ViewData["Title"] = "Details";
 }
@@ -26,7 +26,7 @@
             @Html.DisplayNameFor(model => model.Valor)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Valor)
+            @Html.DisplayFor(model => model.Valor,CultureInfo.InvariantCulture)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Ativo)

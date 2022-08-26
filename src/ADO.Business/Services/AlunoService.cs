@@ -23,19 +23,9 @@ namespace ADO.Business.Services
 
         public async Task<Aluno> Adicionar(Aluno aluno)
         {
-            using (var conn = Connection)
-            {
-
-                var query = $"SELECT * FROM alunos AS A WHERE A.CPF={@aluno.CPF}";
-                var result = await conn.ExecuteAsync(query, aluno);
-                if (result > 0)
-                {
-                    AdicionarNotificacoes("Já existe um Aluno com esse Documento ");
-                    return aluno;
-                }
-                await _alunoRepository.Adicionar(aluno);
-                return aluno;
-            }
+           
+               return await _alunoRepository.Adicionar(aluno);
+           
 
         }
 
@@ -49,6 +39,10 @@ namespace ADO.Business.Services
         public async Task Excluir(int id)
         {
            await _alunoRepository.Remover(id);
+        }
+        public async Task<bool> ObterTteste(int id)
+        {
+           return  await _alunoRepository.ObterBool(id);
         }
     }
 }

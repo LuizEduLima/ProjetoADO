@@ -6,20 +6,23 @@ using System.Data;
 using System.Data.SqlClient;
 using ADO.Business.Notificacoes;
 using ADO.Business.Interfaces;
+using ADO.Data.Data;
 
 namespace ADO.Data.Repository
 {
-    public class BaseADO : IDisposable
+    public abstract class BaseADO : IDisposable
     {
         private IConfiguration Configure { get; set; }
         public SqlConnection Connection { get; }
+        public ADOWebContext _context;
 
         private readonly INotificador _notificador;
-        public BaseADO(IConfiguration configure, INotificador notificador)
+        protected BaseADO(IConfiguration configure, INotificador notificador, ADOWebContext context)
         {
             Configure = configure;
             Connection = new SqlConnection(Configure.GetConnectionString("ADOWebContext"));
             _notificador = notificador;
+            _context = context;
         }
 
 
@@ -27,5 +30,10 @@ namespace ADO.Data.Repository
         {
             Connection?.Dispose();
         }
+        protected void AdicionarErroProcessamento(string mensagem)
+        {
+            _notificador.Handle(new Notificacao(mensagem));
+        }
+
     }
 }

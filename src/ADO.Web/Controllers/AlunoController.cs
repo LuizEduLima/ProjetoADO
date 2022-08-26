@@ -35,11 +35,15 @@ namespace ADO.Web.Controllers
         [HttpGet("detalhes-aluno/{id:int}")]
         public async Task<ActionResult> Details(int id)
         {
+
+
             if (id <= 0)
             {
                 AdicionarErroNotificacao("O Registro não foi informado!");
                 return BadRequest();
             }
+
+            var resultboll = await _alunoRepository.ObterBool(id);
             var result = await _alunoRepository.ObterPorId(id);
             return View(result);
 
@@ -65,9 +69,9 @@ namespace ADO.Web.Controllers
         [HttpGet("editar-aluno/{id:int}")]
         public async Task<ActionResult> Edit(int id)
         {
-            var result = await _alunoRepository.ObterPorId(id);
 
-            if (result == null) return NotFound();
+            var result = await _alunoRepository.ObterPorId(id);
+            if (OperacaoValida()) RedirectToAction("Index");
 
             return View(result);
         }
@@ -100,6 +104,10 @@ namespace ADO.Web.Controllers
         {
             if (id <= 0) return BadRequest();
             await _alunoService.Excluir(id);
+            if (!OperacaoValida())
+            {
+                return View();
+            }
 
             return RedirectToAction(nameof(Index));
 

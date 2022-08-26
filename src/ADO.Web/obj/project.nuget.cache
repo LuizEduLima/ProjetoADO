@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "S/vXoLhdN7HvPqfpGKQlDrD1FzmQKGK1T1v+RrfM+IdzZ5WD9KUACeO9kuofZ6yw7fi5cPSxmub5Nt3yXdqMVA==",
+  "dgSpecHash": "66nHl6vJZKriz5vz4ojirAoNvXqtOo3zYtEx8dsS0re0FkO84wI99uDP77CTVPNv1UVitklrJZ4T3OALaXOFmw==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\ProjetoADO\\ProjetoADO\\src\\ADO.Web\\ADO.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LEL\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\LEL\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
     "C:\\Users\\LEL\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.8\\microsoft.aspnet.mvc.5.2.8.nupkg.sha512",
     "C:\\Users\\LEL\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.8\\microsoft.aspnet.razor.3.2.8.nupkg.sha512",
     "C:\\Users\\LEL\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.8\\microsoft.aspnet.webpages.3.2.8.nupkg.sha512",
@@ -148,7 +149,7 @@
     "C:\\Users\\LEL\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\LEL\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\LEL\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\LEL\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\LEL\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\LEL\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\LEL\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\LEL\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",

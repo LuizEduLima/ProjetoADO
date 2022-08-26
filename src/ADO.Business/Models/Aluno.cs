@@ -21,7 +21,7 @@ namespace ADO.Business.Models
         public string Estado { get; set; }
 
         [Required(ErrorMessage = "O {0} é obrigatõrio")]
-        public string Nascimento { get; set; }
+        public DateTime Nascimento { get; set; }
 
     }
 }

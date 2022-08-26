@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 
 namespace ADO.Web.Controllers
 {
-    public class CategoriaController : Controller
+    public class CategoriaController : MainController
     {
 
         public readonly ICategoriaRepository _categoriaRepository;
         public readonly ICategoriaService _categoriaService;
 
         public CategoriaController(ICategoriaRepository categoriaRepository,
-            ICategoriaService categoriaService)
+                                   ICategoriaService categoriaService,
+                                   INotificador notificador):base(notificador)
         {
             _categoriaRepository = categoriaRepository;
             _categoriaService = categoriaService;
@@ -51,6 +52,9 @@ namespace ADO.Web.Controllers
             if (!ModelState.IsValid) return View(categoria);
 
             await _categoriaService.Adicionar(categoria);
+
+            if (!OperacaoValida()) return View(categoria);
+
             return RedirectToAction(nameof(Index));            
         }
 
@@ -69,6 +73,7 @@ namespace ADO.Web.Controllers
 
             await _categoriaService.Atualizar(categoria);
 
+            if (!OperacaoValida()) return View(categoria);
             return RedirectToAction("Index");
         }
 
@@ -83,8 +88,10 @@ namespace ADO.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(Categoria categoria)
         {
-
+            
             await _categoriaService.Excluir(categoria.Id);
+            if (!OperacaoValida()) return View(categoria);
+            
             return RedirectToAction(nameof(Index));
 
         }

@@ -28,7 +28,10 @@ namespace ADO.Web
             services.AddScoped<INotificador, Notificador>();
             services.AddScoped(typeof(AlunoService));
             services.AddScoped<IAlunoService, AlunoService>();
-            
+            services.AddScoped<ICursoService, CursoService>();
+            services.AddScoped<ICategoriaService, CategoriaService>();
+
+
             services.AddScoped<IAlunoRepository, AlunoRepository>();
             services.AddScoped<ICursoRepository, CursoRepository>();
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
@@ -44,18 +47,20 @@ namespace ADO.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-            //else
-            //{
-            //    app.UseExceptionHandler("/erro/500");
-            //    app.UseStatusCodePagesWithRedirects("/erro/{0}");
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/erro/500");
+                app.UseStatusCodePagesWithRedirects("/erro/{0}");
 
-            //}
-            app.UseExceptionHandler("/erro/500");
-            app.UseStatusCodePagesWithRedirects("/erro/{0}");
+            }
+            //app.UseExceptionHandler("/erro/500");
+            //app.UseStatusCodePagesWithRedirects("/erro/{0}");
+            //app.UseExceptionHandler("/erro/500");
+            //app.UseStatusCodePagesWithRedirects("/erro/{0}");
 
 
             app.UseHsts();

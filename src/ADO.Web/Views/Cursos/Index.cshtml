@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<ADO.Business.Models.Curso>
-
+@using System.Globalization
 @{
     ViewData["Title"] = "Index";
 }
@@ -14,6 +14,9 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+               Categoria
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TotalHoras)
@@ -35,6 +38,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Descricao)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TotalHoras)
